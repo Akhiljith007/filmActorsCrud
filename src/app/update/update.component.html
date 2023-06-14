@@ -1,0 +1,67 @@
+<div class="full-body">
+
+    <div class="container mt-2">
+
+
+        <div class="main-card">
+
+            <div class="card bg-transparent ">
+               <form name="ngForm"  #editcontacts="ngForm">
+                    <ul class="list-group ">
+                        <li class="list-group-item bg-transparent">
+                            <input type="text" name="name" #name="ngModel" [(ngModel)]="contact.name" placeholder="Nick-Name">
+                        </li>
+                        <li class="list-group-item bg-transparent">
+                            <input name="imgF" #imgF="ngModel" [(ngModel)]="contact.imgF" type="text" placeholder="Image-URL">
+                        </li>
+    
+                        <li class="list-group-item bg-transparent"> <input name="originalName" #originalName="ngModel" [(ngModel)]="contact.originalName" type="text" placeholder="Real-Name"> </li>
+                        <li class="list-group-item bg-transparent"> <input name="Date" #Date="ngModel" [(ngModel)]="contact.Date" type="text" placeholder="DOB:"></li>
+                        <li class="list-group-item bg-transparent"><input name="Profession" #Profession="ngModel" [(ngModel)]="contact.Profession" type="text" placeholder="Profession"> </li>
+                        <li class="list-group-item bg-transparent"><input name="instagram" #instagram="ngModel" [(ngModel)]="contact.instagram" type="text" placeholder="Instagram Followers"> </li>
+                        <li class="list-group-item bg-transparent"><input name="twitter" #twitter="ngModel" [(ngModel)]="contact.twitter" type="text" placeholder="Twitter Followers"> </li>
+                        <li class="list-group-item bg-transparent"><input name="email" #email="ngModel" [(ngModel)]="contact.email" type="text" placeholder="Email"> </li>
+    
+    
+                        <li class="list-group-item bg-transparent"><input name="Nationality" #Nationality="ngModel" [(ngModel)]="contact.Nationality" type="text" placeholder="Nationality"></li>
+                        <li class="list-group-item bg-transparent"><input name="Town" #Town="ngModel" [(ngModel)]="contact.Town" type="text" placeholder="Home Town"></li>
+                        <li class="list-group-item bg-transparent"><input name="Note" #Note="ngModel" [(ngModel)]="contact.Note" type="text" placeholder="Short-Note "></li>
+    
+                        <div class="button mt-2">
+                            <button type="button" routerLink="" class="btn btn-outline-danger w-25">close</button>
+                            <button type="button" (click)="  editContacts(contact.id)" class="btn btn-outline-success w-25">update</button>
+                        </div>
+    
+                    </ul>
+               </form>
+            </div>
+
+
+            <div id="mini-bio" class="card bg-transparent" style="width: 18rem;">
+                <img [src]="contact.imgF" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title bg-transparent text-light ">{{contact.name}} <span></span></h5>
+                 
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item bg-transparent">Real Name: <span>{{contact.originalName}}</span></li>
+                    <li class="list-group-item bg-transparent">DOB:<span>{{contact.Date}} </span> </li>
+                    <li class="list-group-item bg-transparent">Profession : <span>{{contact.Profession}} </span></li>
+                    <li class="list-group-item bg-transparent">Instagram Followers : <span> {{contact.instagram}}</span></li>
+                    <li class="list-group-item bg-transparent">Twitter Followers : <span>{{contact.twitter}} </span></li>
+                    <li class="list-group-item bg-transparent"> Email : <span>{{contact.email}}</span> </li>
+                    <li class="list-group-item bg-transparent">Nationality: <span>{{contact.Nationality}}</span></li>
+                    <li class="list-group-item bg-transparent">Home Town: <span>{{contact.Town}}</span></li>
+                    <li class="list-group-item bg-transparent"><span>{{contact.Note}}</span></li>
+
+                </ul>
+               
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+
+

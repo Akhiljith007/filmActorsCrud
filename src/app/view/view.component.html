@@ -1,0 +1,31 @@
+<div class="full-body">
+
+    <div class="container mt-2">
+  
+      <div>
+        <img [src]="contact.imgS" alt="">
+  
+      </div>
+      <div>
+  
+        <div class="card bg-transparent" name="contact" [(ngModel)]="contact">
+          <ul class="list-group ">
+            <li class="list-group-item bg-transparent"><span class="text-center text-info">{{contact.name}}</span>
+            </li>
+            <li class="list-group-item bg-transparent">Real Name: <span>{{contact.originalName}}</span> </li>
+            <li class="list-group-item bg-transparent">DOB: <span>{{contact.Date}}</span> </li>
+            <li class="list-group-item bg-transparent">Profession : <span> {{contact.Profession}}</span> </li>
+            <li class="list-group-item bg-transparent">Instagram Followers : <span> {{contact.instagram}} M</span> </li>
+            <li class="list-group-item bg-transparent">Twitter Followers : <span> {{contact.twitter}}</span> </li>
+            <li class="list-group-item bg-transparent">Email : <span> {{contact.email}}</span> </li>
+            <li class="list-group-item bg-transparent">Nationality: <span>{{contact.Nationality}}</span></li>
+            <li class="list-group-item bg-transparent">Home Town: <span>{{contact.Town}}</span></li>
+            <li class="list-group-item bg-transparent"><span>{{contact.Note}}</span></li>
+  
+          </ul>
+        </div>
+  
+      </div>
+    </div>
+  
+  </div>

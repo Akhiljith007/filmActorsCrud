@@ -1,1 +1,115 @@
-<p>allcontacts works!</p>
+<div class="full-body">
+
+    <div class="navbar  ">
+        <div class="container-fluid">
+
+            <form class="d-flex" role="search">
+                <input name="searchKey" [(ngModel)]="searchKey" id="search-bar" class="form-control me-2" type="text"
+                    placeholder="Search your Favourities" aria-label="Search">
+
+                    <button type="button" (click)="searchfavourites()" class="btn btn-outline-success">Search</button>
+
+&nbsp; &nbsp;   
+                    <select   #data class=" text-center text-info bg-transparent rounded-4 " (change)="sortingData(data.value)"  id="sortbutton">
+                       
+                     
+                       <option   disabled  selected hidden value="">SORT</option>
+                        <option    value="name">NAME</option>
+                        <option    value="instagram">Insta Followers</option>
+                    </select>
+                 
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+
+            </form>
+
+       
+
+          
+            <div class="refreshbutton">
+
+                <i (click)="refresh()" 
+                class="fa-solid fa-arrows-rotate fa-fade text-white"></i>
+
+               
+                &nbsp;
+                &nbsp;
+                <button class="btn btn-outline-info" routerLink="add" type="submit">ADD <i
+                        class="fa-solid fa-user-plus"></i></button>
+
+            </div>
+
+
+
+        </div>
+
+
+
+<img *ngIf="isLoading" class="w-100" src="https://blog.hubspot.com/hs-fs/hubfs/7a8f8d634013568124e130728834d47a.gif?width=1500&name=7a8f8d634013568124e130728834d47a.gif" alt="">
+
+       
+
+        <div  *ngIf="(allcontact | pipe:searchKey:'name').length==0 && !isLoading ">
+
+            <h6 class="ms-5 mt-3"   style="color: red; text-align: center; ">No Celebrity found</h6>
+
+        </div>
+
+
+
+
+        <div class="container">
+
+
+
+
+
+            <div class="body-card">
+                <div id="body-card" class="mt-5" *ngFor="let contact of allcontact | pipe : favourtes:'name'| sort:[sortedComplted]">
+                    <div id="img-card" class="card" style="width: 18rem;">
+                        <img [src]="contact.imgF" class="card-img-top" alt="...">
+                        <div id="bg-change" class="card-body">
+                            <h5 class="card-title ">{{contact.name}}</h5>
+
+                        </div>
+                    </div>
+
+                    <div class="card text-center">
+
+                        <div class="card-body">
+                            <h6 class="card-title">original-name:<span class="text"> {{contact.originalName}} </span>
+                            </h6>
+                            <hr>
+                            <h6 class="card-title">Nationality:<span class="text"> {{contact.Nationality}}</span></h6>
+
+                            <h6 class="card-title">Profession :<span class="text">{{contact.Profession}}</span></h6>
+                            <h6 class="card-title">Instagram Followers :<span class="text">{{contact.instagram}} M</span>
+                            </h6>
+
+                            <h6 class="card-title">Born:<span class="text"> {{contact.Date}} </span></h6>
+
+                        </div>
+                        <div class="card-footer text-body-secondary">
+                            <button type="button" class="btn btn-outline-primary" routerLink="view/{{contact.id}}"><i
+                                    class="fa-solid fa-eye"></i></button>
+                            &nbsp;
+                            <button type="button" class="btn btn-outline-warning" routerLink="update/{{contact.id}}"><i
+                                    class="fa-solid fa-pen"></i></button>
+                            &nbsp;
+                            <button (click)="deleteContacts(contact.id)" type="button" class="btn btn-outline-danger"><i
+                                    class="fa-solid fa-trash"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+ 
+ 
+    </div>
+
+</div>

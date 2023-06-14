@@ -1,1 +1,122 @@
-<p>add works!</p>
+
+
+<div class="full-body">
+
+    <div class="container mt-2">
+
+
+        <div class="main-card">
+
+            <div class="card bg-transparent">
+              
+                    <ul class="list-group ">
+                      <form #addContactForm="ngForm" >
+                            <li class="list-group-item bg-transparent">
+                                <input  type="text" name="name" #name="ngModel" [(ngModel)]="contact.name" required="" placeholder="Nick-Name">
+                            </li>
+                            <div *ngIf="name.invalid&&name.touched">
+                                <h6 class="text-danger mt-2">please enter valid name</h6>
+                            </div>
+                            <li class="list-group-item bg-transparent">
+                                <input required  type="text" name="imgF" #imgF="ngModel" [(ngModel)]="contact.imgF" placeholder="First-Image-URL">
+                            </li>
+
+                            <div *ngIf="imgF.invalid&&imgF.touched">
+                                <h6 class="text-danger mt-2">please enter valid url</h6>
+                            </div>
+
+                            <li class="list-group-item bg-transparent">
+                                <input required  type="text" name="imgS" #imgS="ngModel" [(ngModel)]="contact.imgS" placeholder="Second-Image-URL">
+                            </li>
+                            <div *ngIf="imgS.invalid&&imgS.touched">
+                                <h6 class="text-danger mt-2">please enter valid url</h6>
+                            </div>
+        
+                            <li class="list-group-item bg-transparent">  <input required name="originalName" #originalName="ngModel"  [(ngModel)]="contact.originalName" type="text" placeholder="Real-Name"> </li>
+                            <div *ngIf="originalName.invalid&&originalName.touched">
+                                <h6 class="text-danger mt-2">please enter valid name</h6>
+                            </div>
+
+                            <li class="list-group-item bg-transparent"> <input required name="Date" #Date="ngModel" [(ngModel)]="contact.Date"  type="date" placeholder="DOB:"></li>
+                            <div *ngIf="Date.invalid&&Date.touched">
+                                <h6 class="text-danger mt-2">please enter valid date</h6>
+                            </div>
+                            <li class="list-group-item bg-transparent"><input  required name="Profession" #Profession="ngModel" [(ngModel)]="contact.Profession"  type="text" placeholder="Profession"> </li>
+
+                            <div *ngIf="Profession.invalid&&Profession.touched">
+                                <h6 class="text-danger mt-2">please enter valid profession</h6>
+                            </div>
+                            <li class="list-group-item bg-transparent"><input required="" name="instagram" #instagram="ngModel" [(ngModel)]="contact.instagram"  type="text" placeholder="Instagram"> </li>
+                            <div *ngIf="instagram.invalid&&instagram.touched">
+                                <h6 class="text-danger mt-2">please enter valid instagram Count</h6>
+                            </div>
+
+                            <li class="list-group-item bg-transparent"><input  required="" name="twitter" #twitter="ngModel" [(ngModel)]="contact.twitter"  type="text" placeholder="Twitter"> </li>
+
+                            <div *ngIf="twitter.invalid&&twitter.touched">
+                                <h6 class="text-danger mt-2">please enter valid Twitter Count</h6>
+                            </div>
+
+                            <li class="list-group-item bg-transparent"><input required="" name="email" #email="ngModel" [(ngModel)]="contact.email"  type="text" placeholder="Email"> </li>
+
+        
+                            <div *ngIf="email.invalid&&email.touched">
+                                <h6 class="text-danger mt-2">please enter valid email</h6>
+                            </div>
+
+                            <li class="list-group-item bg-transparent"><input required pattern="[a-zA-Z]*"  name="Nationality" #Nationality="ngModel" [(ngModel)]="contact.Nationality"  type="text" placeholder="Nationality"></li>
+
+
+                            <div *ngIf="Nationality.invalid&&Nationality.touched">
+                                <h6 class="text-danger mt-2">please enter valid nation</h6>
+                            </div>
+
+                            <li class="list-group-item bg-transparent"><input required pattern="[a-zA-Z]*"  name="Town" #Town="ngModel" [(ngModel)]="contact.Town"  type="text" placeholder="Home Town"></li>
+
+                            <div *ngIf="Town.invalid&&Town.touched">
+                                <h6 class="text-danger mt-2">please enter valid town</h6>
+                            </div>
+
+
+                            <li class="list-group-item bg-transparent"><input required  name="Note" #Note="ngModel" [(ngModel)]="contact.Note"  type="text" placeholder="Short-Note "></li>
+
+                            <div *ngIf="Note.invalid&&Note.touched">
+                                <h6 class="text-danger mt-2">please enter About</h6>
+                            </div>
+        
+                            <div class="button mt-2">
+                                <button routerLink="" type="button" class="btn btn-outline-danger w-25">close</button>
+                                <button (click)="addContact(contact)" [disabled]="addContactForm.invalid" type="button"  class="btn btn-outline-success w-25">create</button>
+                            </div>
+        
+                      </form>
+                    </ul>
+         
+            </div>
+
+
+            <div id="mini-bio" class="card bg-transparent" style="width: 18rem;">
+                <img id="firstImg" class="img-size" [src]="contact.imgF"  alt="...">
+                <div class="card-body">
+                    <h5 class="card-title bg-transparent text-light">{{contact.name}} <span></span></h5>
+
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item bg-transparent">Real Name: <span>{{contact.originalName}}</span></li>
+                    <li class="list-group-item bg-transparent">DOB: <span>{{contact.Date}}</span> </li>
+                    <li class="list-group-item bg-transparent">Profession : <span>{{contact.Profession}} </span></li>
+                    <li class="list-group-item bg-transparent">Instagram Folloers : <span>{{contact.instagram}} </span></li>
+                    <li class="list-group-item bg-transparent">Twitter Folllowers : <span>{{contact.twitter}} </span></li>
+                    <li class="list-group-item bg-transparent"> Email : <span>{{contact.email}}</span> </li>
+                    <li class="list-group-item bg-transparent">Nationality: <span>{{contact.Nationality}}</span></li>
+                    <li class="list-group-item bg-transparent">Home Town: <span>{{contact.Town}}</span></li>
+                    <li class="list-group-item bg-transparent">Short-Note: <span>{{contact.Note}}</span></li>
+
+                </ul>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>

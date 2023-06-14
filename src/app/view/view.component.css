@@ -1,0 +1,51 @@
+
+
+
+
+
+.full-body{background-image: url(https://i.gifer.com/JyDu.gif);
+    background-size: cover;
+    box-sizing: border-box;
+    overflow: auto;
+    height: 88vh;}
+    
+    
+    img{width: 400px;
+        height: 300px;
+    border-radius: 50px;}
+    
+    span{color: rgb(171, 218, 79);}
+    
+    .container{display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    
+    box-sizing: border-box;
+    height: 85vh;
+    align-items: center;}
+    
+    li{color: whitesmoke;}
+    
+    .card{width: 500px;
+        box-sizing: border-box;
+    height: 500px;}
+    
+    @media(max-width:990px){
+        img{width: 300px;}
+        .card{height: 300px;}
+    }
+    
+    @media(max-width:550px){
+        img{width: 300px;}
+        .card{width: 300px;}
+    }
+    
+    @media(max-width:330){
+        img{width: 130px;}
+        .card{width: 130px;}
+    }
+    
+    @media(max-width:300){
+        img{width: 80px;}
+        .card{width: 80px;}
+    }

@@ -1,0 +1,143 @@
+
+
+
+
+.container{margin-top: 15px;}
+
+#sortbutton{width: 60px;}
+
+
+
+input{width: 500px;
+  height: 40px;
+    border: 1px solid black;
+    border-radius: 50px;
+    }
+
+    input ::placeholder{text-align: center;}
+
+    input:hover{border: 2px solid rgb(91, 91, 226);}
+.search-bar{width: 100%;
+ 
+display: flex;
+justify-content: center;
+align-items: center;}
+
+#body-card{display: flex;
+ margin-top: 20px;
+ border-radius: 50px;
+ flex-wrap: wrap;
+ text-align: center;
+
+  background-color:transparent;
+    
+align-items: center;
+text-align: center;}
+
+#body-card:hover{
+ 
+padding: 2px;}
+img{border-radius: 40px;
+width: 250px;
+height: 220px;}
+#bg-change{border-radius: 20px;
+background-color: transparent;}
+
+.card-body{background-color: transparent;}
+
+.card{width: 300px;
+  background-color: transparent;
+height: 230px;}
+.body-card{display: flex;
+    width: 100%;
+flex-wrap: wrap;
+cursor: pointer;
+
+justify-content: space-between;}
+
+.full-body{background-image: url(https://j.gifs.com/G65MKL.gif);
+background-size: cover;
+overflow: auto;
+height: 88vh;}
+
+h6{font-size: 15px;
+  color: whitesmoke;
+}
+
+
+#bg-change{
+color: rgb(171, 218, 79);
+text-align: center;}
+
+span{color:rgb(171, 218, 79) ;}
+
+::-webkit-scrollbar{
+  width: 10px;
+  background-color: transparent;
+}
+::-webkit-scrollbar-thumb{
+  width: 20px;
+  height:10px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background-color: rgb(220, 106, 106);
+
+height: 5px;
+}
+
+
+
+
+@media(max-width:660px){
+
+  #img-card{display: flex;
+  flex-direction: column;
+justify-content: center;
+align-items: center;}
+
+#search-bar{width: 100px;}
+  img{width: 150px;}
+
+  #search-bar{
+    width: 50px;
+  }
+}
+
+@media(max-width:700px){
+
+
+
+  #search-bar{width: 270px;}
+}
+
+@media(max-width:770px){
+  #img-card{display: flex;
+    flex-direction: column;
+  justify-content: center;
+  align-items: center;}
+  img{width: 180px;}
+}
+
+@media(max-width:860px){
+  #search-bar{
+    width: 300px;
+  }
+}
+
+@media(max-width:648px){#search-bar{width: 150px;}}
+@media(max-width:500px){#search-bar{width: 120px;}}
+
+@media(max-width:475px){#search-bar{width: 100px;}}
+@media(max-width:430px){#search-bar{width: 90px;}
+
+.refreshbutton{margin-left: 250px;
+  margin-bottom: 50px;
+  display: flex
+;}
+
+}
+@media(max-width:360px){#search-bar{width: 120px;}}
+
+option{width: 6px;}
